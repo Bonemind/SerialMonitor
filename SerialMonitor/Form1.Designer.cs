@@ -31,10 +31,11 @@
             this.comComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.serialTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.connectButton = new System.Windows.Forms.Button();
+            this.refreshButton = new System.Windows.Forms.Button();
             this.serialMessageBox = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.sendCmdButton = new System.Windows.Forms.Button();
+            this.clearButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comComboBox
@@ -66,25 +67,25 @@
             this.serialTextBox.Size = new System.Drawing.Size(419, 296);
             this.serialTextBox.TabIndex = 2;
             // 
-            // button1
+            // connectButton
             // 
-            this.button1.Location = new System.Drawing.Point(279, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Connect";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.connectButton.Location = new System.Drawing.Point(279, 24);
+            this.connectButton.Name = "connectButton";
+            this.connectButton.Size = new System.Drawing.Size(75, 23);
+            this.connectButton.TabIndex = 3;
+            this.connectButton.Text = "Connect";
+            this.connectButton.UseVisualStyleBackColor = true;
+            this.connectButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // refreshButton
             // 
-            this.button2.Location = new System.Drawing.Point(360, 24);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Refresh";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.refreshButton.Location = new System.Drawing.Point(360, 24);
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.Size = new System.Drawing.Size(75, 23);
+            this.refreshButton.TabIndex = 4;
+            this.refreshButton.Text = "Refresh";
+            this.refreshButton.UseVisualStyleBackColor = true;
+            this.refreshButton.Click += new System.EventHandler(this.button2_Click);
             // 
             // serialMessageBox
             // 
@@ -93,25 +94,36 @@
             this.serialMessageBox.Size = new System.Drawing.Size(200, 20);
             this.serialMessageBox.TabIndex = 5;
             // 
-            // button3
+            // sendCmdButton
             // 
-            this.button3.Location = new System.Drawing.Point(279, 91);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Send";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.sendCmdButton.Location = new System.Drawing.Point(279, 91);
+            this.sendCmdButton.Name = "sendCmdButton";
+            this.sendCmdButton.Size = new System.Drawing.Size(75, 23);
+            this.sendCmdButton.TabIndex = 6;
+            this.sendCmdButton.Text = "Send";
+            this.sendCmdButton.UseVisualStyleBackColor = true;
+            this.sendCmdButton.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // clearButton
+            // 
+            this.clearButton.Location = new System.Drawing.Point(360, 91);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(75, 23);
+            this.clearButton.TabIndex = 7;
+            this.clearButton.Text = "Clear";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(761, 454);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.clearButton);
+            this.Controls.Add(this.sendCmdButton);
             this.Controls.Add(this.serialMessageBox);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.refreshButton);
+            this.Controls.Add(this.connectButton);
             this.Controls.Add(this.serialTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comComboBox);
@@ -127,10 +139,11 @@
         private System.Windows.Forms.ComboBox comComboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox serialTextBox;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button connectButton;
+        private System.Windows.Forms.Button refreshButton;
         private System.Windows.Forms.TextBox serialMessageBox;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button sendCmdButton;
+        private System.Windows.Forms.Button clearButton;
     }
 }
 

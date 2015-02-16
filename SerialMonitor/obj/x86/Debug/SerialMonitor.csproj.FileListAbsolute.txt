@@ -6,3 +6,11 @@ c:\users\subhi\documents\visual studio 2010\Projects\SerialMonitor\SerialMonitor
 c:\users\subhi\documents\visual studio 2010\Projects\SerialMonitor\SerialMonitor\obj\x86\Debug\SerialMonitor.exe
 c:\users\subhi\documents\visual studio 2010\Projects\SerialMonitor\SerialMonitor\obj\x86\Debug\SerialMonitor.pdb
 C:\Users\Subhi\Documents\Visual Studio 2010\Projects\SerialMonitor\SerialMonitor\obj\x86\Debug\SerialMonitor.csprojResolveAssemblyReference.cache
+D:\Projects\SerialMonitor\SerialMonitor\obj\x86\Debug\SerialMonitor.exe
+D:\Projects\SerialMonitor\SerialMonitor\obj\x86\Debug\SerialMonitor.pdb
+D:\Projects\SerialMonitor\SerialMonitor\bin\Debug\SerialMonitor.exe
+D:\Projects\SerialMonitor\SerialMonitor\bin\Debug\SerialMonitor.pdb
+D:\Projects\SerialMonitor\SerialMonitor\obj\x86\Debug\SerialMonitor.csprojResolveAssemblyReference.cache
+D:\Projects\SerialMonitor\SerialMonitor\obj\x86\Debug\SerialMonitor.Form1.resources
+D:\Projects\SerialMonitor\SerialMonitor\obj\x86\Debug\SerialMonitor.Properties.Resources.resources
+D:\Projects\SerialMonitor\SerialMonitor\obj\x86\Debug\SerialMonitor.csproj.GenerateResource.Cache

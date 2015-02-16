@@ -12,7 +12,14 @@ namespace SerialMonitor
 {
     public partial class Form1 : Form
     {
+        /// <summary>
+        /// The comport to use
+        /// </summary>
         SerialPort comPort;
+
+        /// <summary>
+        /// Whether we are monitoring at the moment or not
+        /// </summary>
         bool monitoring = false;
         public Form1()
         {
@@ -20,6 +27,9 @@ namespace SerialMonitor
             pupulateSelectionBox();
         }
 
+        /// <summary>
+        /// Gets all comports available on the system
+        /// </summary>
         void pupulateSelectionBox()
         {
             string[] ports = SerialPort.GetPortNames();
@@ -28,12 +38,24 @@ namespace SerialMonitor
                 comComboBox.Items.Add(port);
             }
         }
+
+
+        /// <summary>
+        /// Refresh the available comports
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             comComboBox.Items.Clear();
             pupulateSelectionBox();
         }
 
+        /// <summary>
+        /// Connects to the selected comport
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             if (!monitoring)
@@ -45,21 +67,27 @@ namespace SerialMonitor
                     comPort.Open();
                     serialTextBox.Text += "Connected to comport\r\n";
                     monitoring = true;
-                    button1.Text = "Disconnect";
+                    connectButton.Text = "Disconnect";
                 }
                 catch (Exception ex)
                 {
-                    serialTextBox.Text += ex.Message + "\r\n";
+                    MessageBox.Show(ex.Message);
                 }
             }
             else
             {
                 monitoring = false;
                 comPort.Close();
-                button1.Text = "Connect";
+                connectButton.Text = "Connect";
             }
 
         }
+
+        /// <summary>
+        /// Handles the recieving of serial data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
         {
             SerialPort sp = (SerialPort)sender;
@@ -67,6 +95,10 @@ namespace SerialMonitor
             populateTextBox(indata);        
         }
 
+        /// <summary>
+        /// Adds the data recieved by the comport to the text box
+        /// </summary>
+        /// <param name="message">The message we recieved</param>
         public void populateTextBox(String message)
         {
             if (this.InvokeRequired)
@@ -75,13 +107,18 @@ namespace SerialMonitor
             }
             else
             {
-                serialTextBox.Text += message + Environment.NewLine;
+                serialTextBox.Text += message;
                 serialTextBox.SelectionStart = serialTextBox.Text.Length;
                 serialTextBox.ScrollToCaret();
                 serialTextBox.Refresh();
             }
         }
 
+        /// <summary>
+        /// Sends a message
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             try
@@ -91,15 +128,16 @@ namespace SerialMonitor
                     comPort.Write(serialMessageBox.Text + '\n');
                     serialMessageBox.Text = "";
                 }
-                else
-                {
-                    MessageBox.Show("Please enter a message");
-                }
             }
             catch (Exception f)
             {
                 MessageBox.Show(f.Message);
             }
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            serialTextBox.Text = "";
         }
     }
 }
